@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControllerScript : MonoBehaviour
 {
-
+    // Stores the object the raycast hits.
     public GameObject go;
     
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class ControllerScript : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
+        
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
         if (Physics.Raycast(transform.position, transform.forward, out hit))
