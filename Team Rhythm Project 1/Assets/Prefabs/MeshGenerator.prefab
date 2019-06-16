@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7668930546003554459}
   - component: {fileID: 7668930546003554458}
   - component: {fileID: 7668930546003554457}
+  - component: {fileID: 5446288298665767576}
   m_Layer: 0
   m_Name: MeshGenerator
   m_TagString: Terrain
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: ac31be7a35c62724f93ea957e4b04698, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,3 +94,17 @@ MonoBehaviour:
   mesh: {fileID: 0}
   xSize: 10
   zSize: 10
+--- !u!114 &5446288298665767576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7668930546003554456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca896d818b73c3943a4e383b49550ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainMovementSpeed: 0
+  thisTerrainLife: 0
