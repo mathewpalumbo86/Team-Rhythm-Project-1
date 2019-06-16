@@ -51,14 +51,14 @@ public class PlayerMovement : MonoBehaviour
         zText.text = "Z: " + angles.z;
 
         // Checks the controller y rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
-        if ((angles.y >=315 && angles.y<= 360) ||(angles.y >= 0 && angles.y <= 45))
+        if ((angles.y >=330 && angles.y<= 360) ||(angles.y >= 0 && angles.y <= 30))
         {
             controllerDirectionText.text = "Direction: Forward";
 
             // Vehicle doesn't move when controller points forwards.
 
         }
-        else if((angles.y >= 180 && angles.y <= 315))
+        else if((angles.y >= 180 && angles.y <= 330))
         {
             controllerDirectionText.text = "Direction: Left";
 
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         }
-        else if ((angles.y >= 45 && angles.y <= 180))
+        else if ((angles.y >= 30 && angles.y <= 180))
         {
             controllerDirectionText.text = "Direction: Right";
 
