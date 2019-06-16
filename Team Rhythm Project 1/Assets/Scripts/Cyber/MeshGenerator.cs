@@ -6,15 +6,14 @@ using UnityEngine;
 public class MeshGenerator : MonoBehaviour
 {
 
-
     // Stores the mesh being generated
     public Mesh mesh;
 
-    // arrays that store the mesh values
+    // Arrays that store the mesh values
     Vector3[] vertices;
     int[] triangles;
 
-    // mesh grid size
+    // mMsh grid size
     public int xSize = 20;
     public int zSize = 20;
 
@@ -25,13 +24,14 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // creates the mesh and stores it
+        // Creates the mesh and stores it
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
         // Sets up the mesh
         CreateShape();
         UpdateMesh();
+        
     }
 
     // Update is called once per frame
@@ -40,13 +40,13 @@ public class MeshGenerator : MonoBehaviour
         
     }
 
-
+    // Creates the mesh data (vertices and triangles arrays)
     void CreateShape()
     {
         // Fills the array with vertices (+1's because always 1 more vertice than square on an axis)
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
         
-        // gives all the vertices a position
+        // Gives all the vertices a position
         for (int i = 0, z = 0; z <= zSize; z++)
         {
             for(int x = 0; x <= xSize; x++)
@@ -83,12 +83,10 @@ public class MeshGenerator : MonoBehaviour
 
             }
             vert++;
-        }
-        
-        
-
+        }  
     }
-
+    
+    // Updates mesh using the vertices and triangles arrays data
     void UpdateMesh()
     {
         mesh.Clear();
@@ -97,6 +95,7 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
+        
     }
 
 
@@ -111,8 +110,5 @@ public class MeshGenerator : MonoBehaviour
     //        {
     //            Gizmos.DrawSphere(vertices[i], 0.1f);
     //        }
-    //}
-
-
-    
+    //}    
 }
