@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
     // Movement targets
     public Transform leftTarget;
     public Transform rightTarget;
-
+    public Transform upTarget;
+    public Transform downTarget;
 
     // The speed the vehicle should move.
     public float speed = 1.0f;
@@ -79,7 +80,34 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        // Checks the controller X rotation and assigns it a direction (forward, left, right). Moves the player vehicle accordingly.
+        if ((angles.x >= 330 && angles.x <= 360) || (angles.x >= 0 && angles.x <= 30))
+        {
+            controllerDirectionText.text = "Direction: Forward";
 
+            // Vehicle doesn't move when controller points forwards.
+
+        }
+        else if ((angles.x >= 180 && angles.x <= 330))
+        {
+            controllerDirectionText.text = "Direction: Left";
+
+            // (y-)
+            // Move our position a step closer to the target.            
+            transform.position = Vector3.MoveTowards(transform.position, upTarget.position, step);
+
+
+        }
+        else if ((angles.y >= 30 && angles.y <= 180))
+        {
+            controllerDirectionText.text = "Direction: Right";
+
+            // (y+)
+            // Move our position a step closer to the target.            
+            transform.position = Vector3.MoveTowards(transform.position, downTarget.position, step);
+
+
+        }
 
 
 
