@@ -15,7 +15,7 @@ public class TerrainMovementBehaviour : MonoBehaviour
     private GameObject theTerrainManager;
     
     // Called when terrain instantiates.
-    void Awake()
+    void OnEnable ()
     {
         // Find the terrain spawner with tag.
         theTerrainManager = GameObject.FindGameObjectWithTag("TerrainSpawner");
