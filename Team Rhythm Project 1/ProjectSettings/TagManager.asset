@@ -7,6 +7,7 @@ TagManager:
   - ResetZone
   - TerrainSpawner
   - Terrain
+  - TerrainObjectKillZone
   layers:
   - Default
   - TransparentFX

@@ -5,19 +5,25 @@ using UnityEngine;
 public class TerrainManager : MonoBehaviour
 {
 
+    /// <summary>
+    /// THIS NEEDS TO USE THE OBJECT POOLER
+    /// CREATE ENOUGH TERRAIN FOR THE OBJECT POOL AND THEN STOP
+    /// </summary>
+
+        // Check this
+    // ObjectPooler terrainPoolInstance;
+
+    
+
     // Terrain prefab to be instantiated.
     public GameObject terrainPrefab;
 
     // How fast the terrain moves towards the player.
     public float terrainSpeed;
-
-    // Life length in seconds of the terrain.
-    public float terrainLife;
-
+    
     // Timing values for instantiation.
     public float waitToStart;
     public float waitForNextTerrain;
-
 
     // Start is called before the first frame update
     void Start()
