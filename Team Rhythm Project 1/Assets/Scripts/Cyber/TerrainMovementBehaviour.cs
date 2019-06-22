@@ -23,8 +23,8 @@ public class TerrainMovementBehaviour : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is used for physics updates
+    void FixedUpdate()
     {
         // Move this instance of terrain.
         transform.Translate(Vector3.back * Time.deltaTime * terrainMovementSpeed);

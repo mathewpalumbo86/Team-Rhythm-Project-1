@@ -16,7 +16,7 @@ public class ObjectPoolItem
 public class ObjectPooler : MonoBehaviour {
 
   public static ObjectPooler SharedInstance;    // This instance of the generic pooler
-  public List<ObjectPoolItem> itemsToPool;      // The list of objects pool instances (so this code can be reused by different objects)
+  public List<ObjectPoolItem> itemsToPool;      // The list of object pool instances (so this code can be reused by different objects)
   public List<GameObject> pooledObjects;        // The object pool
 
 	void Awake()
@@ -45,7 +45,7 @@ public class ObjectPooler : MonoBehaviour {
         }
   }
 	
-  // This searches for an inactive object in the pool that can be used. This is called elsewhere.
+  // This searches for an inactive object in the pool that can be used. This is called by other scripts that need an object and requires a tag to be specified.
   public GameObject GetPooledObject(string tag)
   {
     //  Scans through the pool

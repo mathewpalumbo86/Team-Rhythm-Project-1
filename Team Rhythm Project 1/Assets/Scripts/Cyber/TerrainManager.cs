@@ -4,37 +4,16 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
-
-    // Terrain prefab to be instantiated.
-    public GameObject terrainPrefab;
-
-    // How fast the terrain moves towards the player.
-    public float terrainSpeed;
-
-    // Life length in seconds of the terrain.
-    public float terrainLife;
-
-    // Timing values for instantiation.
-    public float waitToStart;
-    public float waitForNextTerrain;
-
-
+    
+    // How fast the terrain moves towards the player. Accessed by TerrainMovementBehaviour.cs
+    public float terrainSpeed;      
+    
     // Start is called before the first frame update
     void Start()
     {
-        // TimedTerrainPlacement will be called after a delay, and then repeat after a different delay.
-        InvokeRepeating("TimedTerrainPlacement", waitToStart, waitForNextTerrain);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        // NOTE: This scripts execution order must be later than the object pooler. The object pooler needs time to build the pool before it is accessed.
         
-    }
-
-    // Instantiate the terrain prefabs when called.
-     public void TimedTerrainPlacement()
-    {
+        // Places the very first terrain object. The object moves to an object activator which triggers the rest.
         GameObject thisTerrainPrefab = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
         if (thisTerrainPrefab != null)
         {
@@ -42,6 +21,13 @@ public class TerrainManager : MonoBehaviour
             thisTerrainPrefab.transform.rotation = transform.rotation;
             thisTerrainPrefab.SetActive(true);
         }
-    } 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    
 
 }

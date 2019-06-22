@@ -46,7 +46,7 @@ public class MeshGenerator : MonoBehaviour
         // Fills the array with vertices (+1's because always 1 more vertice than square on an axis)
         vertices = new Vector3[(xSize + 1) * (zSize + 1)];
         
-        // Gives all the vertices a position
+        // Gives all the vertices a position (x,y,z)
         for (int i = 0, z = 0; z <= zSize; z++)
         {
             for(int x = 0; x <= xSize; x++)
