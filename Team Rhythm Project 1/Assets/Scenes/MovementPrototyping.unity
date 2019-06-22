@@ -1309,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202622094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -100}
   m_LocalScale: {x: 100, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1901,9 +1901,19 @@ MonoBehaviour:
   itemsToPool:
   - objectToPool: {fileID: 7668930546003554456, guid: 7424fee07a7c68b4c80be2c26e290545,
       type: 3}
-    amountToPool: 5
-    shouldExpand: 0
+    amountToPool: 20
+    shouldExpand: 1
   pooledObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
