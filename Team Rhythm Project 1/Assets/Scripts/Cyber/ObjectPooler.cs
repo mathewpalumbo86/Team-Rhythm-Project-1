@@ -16,7 +16,7 @@ public class ObjectPoolItem
 public class ObjectPooler : MonoBehaviour {
 
   public static ObjectPooler SharedInstance;    // This instance of the generic pooler
-  public List<ObjectPoolItem> itemsToPool;      // The list of objects to be pooled
+  public List<ObjectPoolItem> itemsToPool;      // The list of objects pool instances (so this code can be reused by different objects)
   public List<GameObject> pooledObjects;        // The object pool
 
 	void Awake()

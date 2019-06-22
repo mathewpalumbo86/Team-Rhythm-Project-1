@@ -35,7 +35,13 @@ public class TerrainManager : MonoBehaviour
     // Instantiate the terrain prefabs when called.
      public void TimedTerrainPlacement()
     {
-        Instantiate(terrainPrefab, this.gameObject.transform.position, this.gameObject.transform.rotation);
+        GameObject thisTerrainPrefab = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
+        if (thisTerrainPrefab != null)
+        {
+            thisTerrainPrefab.transform.position = transform.position;
+            thisTerrainPrefab.transform.rotation = transform.rotation;
+            thisTerrainPrefab.SetActive(true);
+        }
     } 
 
 }
