@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7668930546003554458}
   - component: {fileID: 7668930546003554457}
   - component: {fileID: 5446288298665767576}
-  - component: {fileID: 309272212757980758}
   - component: {fileID: 2667038473606779134}
   m_Layer: 0
   m_Name: MeshGenerator
@@ -94,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
-  xSize: 10
-  zSize: 10
+  xSize: 32
+  zSize: 32
 --- !u!114 &5446288298665767576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,19 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainMovementSpeed: 0
---- !u!65 &309272212757980758
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7668930546003554456}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 1, z: 10}
-  m_Center: {x: 5, y: 1, z: 5}
 --- !u!54 &2667038473606779134
 Rigidbody:
   m_ObjectHideFlags: 0
