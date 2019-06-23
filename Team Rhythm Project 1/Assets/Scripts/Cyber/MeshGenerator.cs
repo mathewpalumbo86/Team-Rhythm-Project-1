@@ -13,14 +13,14 @@ public class MeshGenerator : MonoBehaviour
     Vector3[] vertices;
     int[] triangles;
 
-    // mMsh grid size
-    public int xSize = 20;
-    public int zSize = 20;
+    // Mesh grid size
+    public int xSize;
+    public int zSize;
 
     // Delay between creating new tiles (for testing)
     // public float pauseBetweenTiles;
+ 
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,12 @@ public class MeshGenerator : MonoBehaviour
         // Sets up the mesh
         CreateShape();
         UpdateMesh();
-        
+
+        // Creates the mesh collider
+        MeshCollider meshc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
+        meshc.sharedMesh = mesh; // Give it your mesh here.
+        meshc.convex = true; // Makes sure the mesh is traversible.
+
     }
 
     // Update is called once per frame
@@ -95,20 +100,20 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles;
 
         mesh.RecalculateNormals();
-        
+
     }
 
 
-    // Used to show position of the vertices
+    //// Used to show position of the vertices
     //private void OnDrawGizmos()
     //{
-
     //    if (vertices == null)
     //        return;
-        
-    //        for (int i = 0; i < vertices.Length; i++)
-    //        {
-    //            Gizmos.DrawSphere(vertices[i], 0.1f);
-    //        }
-    //}    
+
+    //    for (int i = 0; i < vertices.Length; i++)
+    //    {
+    //        Gizmos.DrawSphere(vertices[i], 0.1f);
+    //    }
+
+    //}
 }

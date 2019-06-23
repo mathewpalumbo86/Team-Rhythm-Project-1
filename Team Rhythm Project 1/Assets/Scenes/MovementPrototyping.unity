@@ -1261,12 +1261,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1137458220 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1647570267910612817, guid: d25dd8e3b2bdf744e85cf1037c19b923,
-    type: 3}
-  m_PrefabInstance: {fileID: 1647570268037176621}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1202622094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,7 +2452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116721511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 89}
+  m_LocalPosition: {x: 0, y: 0, z: 96}
   m_LocalScale: {x: 100, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2477,7 +2471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Terrain
-  spawnPosition: {fileID: 1137458220}
+  spawnPosition: {fileID: 2116721514}
+  spawnOffset: 0
+  meshGenerator: {fileID: 0}
 --- !u!1001 &1647570268037176621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2503,7 +2499,7 @@ PrefabInstance:
     - target: {fileID: 1647570267910612817, guid: d25dd8e3b2bdf744e85cf1037c19b923,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1647570267910612817, guid: d25dd8e3b2bdf744e85cf1037c19b923,
         type: 3}
@@ -2555,6 +2551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: waitForNextTerrain
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647570267910612822, guid: d25dd8e3b2bdf744e85cf1037c19b923,
+        type: 3}
+      propertyPath: terrainSpeed
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25dd8e3b2bdf744e85cf1037c19b923, type: 3}

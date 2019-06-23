@@ -6,8 +6,8 @@ public class TerrainManager : MonoBehaviour
 {
     
     // How fast the terrain moves towards the player. Accessed by TerrainMovementBehaviour.cs
-    public float terrainSpeed;      
-    
+    public float terrainSpeed;    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class TerrainManager : MonoBehaviour
         GameObject thisTerrainPrefab = ObjectPooler.SharedInstance.GetPooledObject("Terrain");
         if (thisTerrainPrefab != null)
         {
-            thisTerrainPrefab.transform.position = transform.position;
+            thisTerrainPrefab.transform.position = transform.position;            
             thisTerrainPrefab.transform.rotation = transform.rotation;
             thisTerrainPrefab.SetActive(true);
         }
