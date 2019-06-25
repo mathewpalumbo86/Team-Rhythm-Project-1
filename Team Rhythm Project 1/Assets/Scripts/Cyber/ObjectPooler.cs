@@ -6,10 +6,10 @@ using System.Collections.Generic;
 
 // Individual object pool constructor class
 public class ObjectPoolItem
-{    
-  public GameObject objectToPool;   // The game object to pool
-  public int amountToPool;        // How many to instantiate to the pool on start
-  public bool shouldExpand;         // Whether the pool should expand or not
+{
+    public GameObject objectToPool;   // The game object to pool
+    public int amountToPool;        // How many to instantiate to the pool on start
+    public bool shouldExpand;         // Whether the pool should expand or not
 }
 
 // Object pool behaviour
@@ -80,3 +80,4 @@ public class ObjectPooler : MonoBehaviour {
 	
 	}
 }
+
