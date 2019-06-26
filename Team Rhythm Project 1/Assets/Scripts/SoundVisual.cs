@@ -134,7 +134,7 @@ public class SoundVisual : MonoBehaviour
         // get the db value
         dbValue = 20 * Mathf.Log10(rmsValue / 0.1f);
 
-        // no idea how this works need to research FFTWindow (window is referenced a lot) and BlackmanHarris
+        // 
         // get the sound spectrum
         source.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 

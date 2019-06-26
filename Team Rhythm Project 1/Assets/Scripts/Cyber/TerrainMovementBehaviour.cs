@@ -6,43 +6,29 @@ public class TerrainMovementBehaviour : MonoBehaviour
 {
 
     // Movement speed of this terrain instance.
-    public float terrainMovementSpeed;
-
-    // Terrain life length of this instance.
-    public float thisTerrainLife;
+    public float terrainMovementSpeed;      
 
     // Stores a reference to the terrain manager.
-    private GameObject theTerrainManager;
-    
+    private GameObject theTerrainManager;    
+
+
     // Called when terrain instantiates.
-    void Awake()
+    void OnEnable ()
     {
         // Find the terrain spawner with tag.
         theTerrainManager = GameObject.FindGameObjectWithTag("TerrainSpawner");
 
         // Access the terrain manager script on the spawner and set the speed.
-        terrainMovementSpeed = theTerrainManager.gameObject.GetComponent<TerrainManager>().terrainSpeed;
-
-        // Access the terrain manager script and set the life length.
-        thisTerrainLife = theTerrainManager.gameObject.GetComponent<TerrainManager>().terrainLife;
-
-        // Start coroutine determining life of each instance
-        StartCoroutine(LifeOfTerrainInstance());
-
+        terrainMovementSpeed = theTerrainManager.gameObject.GetComponent<TerrainManager>().terrainSpeed;        
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is used for physics updates
+    void FixedUpdate()
     {
         // Move this instance of terrain.
         transform.Translate(Vector3.back * Time.deltaTime * terrainMovementSpeed);
     }
 
-    IEnumerator LifeOfTerrainInstance()
-    {
-        // Wait for the life length of terrain then destroy it.
-        yield return new WaitForSeconds(thisTerrainLife);
-        Destroy(this.gameObject);
-    }
+    
 
 }
