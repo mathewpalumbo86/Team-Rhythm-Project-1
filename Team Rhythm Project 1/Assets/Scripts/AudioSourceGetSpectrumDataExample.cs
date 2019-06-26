@@ -9,7 +9,7 @@ public class AudioSourceGetSpectrumDataExample : MonoBehaviour
 {
     void Update()
     {
-        float[] spectrum = new float[256];
+        float[] spectrum = new float[1024];
 
         AudioListener.GetSpectrumData(spectrum, 0, FFTWindow.Rectangular);
 
