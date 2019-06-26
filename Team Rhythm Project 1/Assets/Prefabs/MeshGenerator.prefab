@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
-  xSize: 32
-  zSize: 32
+  xSize: 64
+  zSize: 64
 --- !u!114 &5446288298665767576
 MonoBehaviour:
   m_ObjectHideFlags: 0

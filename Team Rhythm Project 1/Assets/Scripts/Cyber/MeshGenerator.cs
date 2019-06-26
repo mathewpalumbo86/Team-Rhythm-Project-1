@@ -27,14 +27,14 @@ public class MeshGenerator : MonoBehaviour
         // Creates the mesh and stores it
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-
+                
         // Sets up the mesh
         CreateShape();
         UpdateMesh();
 
         // Creates the mesh collider
         MeshCollider meshc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
-        meshc.sharedMesh = mesh; // Give it your mesh here.
+        meshc.sharedMesh = mesh; // Gives it the mesh.
         meshc.convex = true; // Makes sure the mesh is traversible.
 
     }
@@ -42,7 +42,7 @@ public class MeshGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     // Creates the mesh data (vertices and triangles arrays)
@@ -90,18 +90,18 @@ public class MeshGenerator : MonoBehaviour
             vert++;
         }  
     }
-    
+
     // Updates mesh using the vertices and triangles arrays data
     void UpdateMesh()
-    {
-        mesh.Clear();
+{
+    mesh.Clear();
 
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
+    mesh.vertices = vertices;
+    mesh.triangles = triangles;
 
-        mesh.RecalculateNormals();
+    mesh.RecalculateNormals();
 
-    }
+}
 
 
     //// Used to show position of the vertices
