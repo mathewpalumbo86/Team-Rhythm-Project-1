@@ -36,7 +36,7 @@ public class SoundVisual : MonoBehaviour
     // how far apart they will be (based on scale)
     private float[] visualScale;
     // number of cubes
-    private int amnVisual = 64;
+    public int amnVisual;
 
 
     // Start is called before the first frame update
@@ -59,18 +59,17 @@ public class SoundVisual : MonoBehaviour
     // spawn objects
     private void SpawnLine()
     {
-        //
+        // These are the scale values which are updated based on the audio spectrum data
         visualScale = new float[amnVisual];
         visualList = new Transform[amnVisual];
 
         for (int i = 0; i < amnVisual; i++)
         {
-            // spawns primitives, in this case cubes (different to instantiate?)
+            // spawns primitives, in this case cubes 
             GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
 
-
             visualList[i] = go.transform;
-            visualList[i].position = Vector3.right * i;
+            visualList[i].position = Vector3.back * i;
         }
           
     }
@@ -85,7 +84,7 @@ public class SoundVisual : MonoBehaviour
         UpdateVisual();
     }
 
-    //
+    // This applys the scale values to the list of objects, updating the visuals
     private void UpdateVisual()
     {
         int visualIndex = 0;
@@ -135,7 +134,7 @@ public class SoundVisual : MonoBehaviour
         dbValue = 20 * Mathf.Log10(rmsValue / 0.1f);
 
         // 
-        // get the sound spectrum
+        // Get the spectrum data (requires the sample array, the channel the FFTWindow type being used to split up the frequencies up)
         source.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
         /* This isn't necessary in this script but gives an example of how to read the pitch. 
