@@ -1,14 +1,77 @@
 fileFormatVersion: 2
-guid: 28d8bbbe20898c04a8ffae0275ee2dd2
+guid: e8e7fd44f7775b942a25966ba8c06cbd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pCube1
+    100004: pCube10
+    100006: pCube11
+    100008: pCube12
+    100010: pCube13
+    100012: pCube2
+    100014: pCube3
+    100016: pCube4
+    100018: pCube5
+    100020: pCube6
+    100022: pCube7
+    100024: pCube8
+    100026: pCube9
+    100028: transform1
+    100030: transform2
     400000: //RootNode
+    400002: pCube1
+    400004: pCube10
+    400006: pCube11
+    400008: pCube12
+    400010: pCube13
+    400012: pCube2
+    400014: pCube3
+    400016: pCube4
+    400018: pCube5
+    400020: pCube6
+    400022: pCube7
+    400024: pCube8
+    400026: pCube9
+    400028: transform1
+    400030: transform2
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube10
+    2300000: pCube10
+    2300002: pCube11
+    2300004: pCube12
+    2300006: pCube13
+    2300008: pCube3
+    2300010: pCube4
+    2300012: pCube5
+    2300014: pCube6
+    2300016: pCube7
+    2300018: pCube8
+    2300020: pCube9
+    3300000: pCube10
+    3300002: pCube11
+    3300004: pCube12
+    3300006: pCube13
+    3300008: pCube3
+    3300010: pCube4
+    3300012: pCube5
+    3300014: pCube6
+    3300016: pCube7
+    3300018: pCube8
+    3300020: pCube9
+    4300000: pCube3
+    4300002: pCube4
+    4300004: pCube5
+    4300006: pCube6
+    4300008: pCube7
+    4300010: pCube8
+    4300012: pCube9
+    4300014: pCube10
+    4300016: pCube11
+    4300018: pCube12
+    4300020: pCube13
+    7400000: Take 001
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -61,8 +124,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -89,7 +152,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
