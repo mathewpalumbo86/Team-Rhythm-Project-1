@@ -6,18 +6,30 @@ public class ObjectDeactivater : MonoBehaviour
 {
 
     // Used to set the tag of the type of object to be turned off.
-    public string objectTag;
+    // public string objectTag;
 
     private void OnTriggerEnter(Collider other)
     {
         // Debug.Log("trigger entered");
 
-        if (other.tag == objectTag)
-        {
-            // Debug.Log("tag is true");
 
-            other.gameObject.SetActive(false);
-        }
+        other.gameObject.SetActive(false);
+
+        //if (other.tag == "Terrain")
+        //{
+        //    // Debug.Log("tag is true");
+
+        //    other.gameObject.SetActive(false);
+        //}
+
+        //if (other.tag == "Collectable")
+        //{
+        //    // Debug.Log("tag is true");
+
+        //    other.gameObject.SetActive(false);
+        //}
+
+
     }
 
     
