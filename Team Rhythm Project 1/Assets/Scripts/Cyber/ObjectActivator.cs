@@ -54,7 +54,7 @@ public class ObjectActivator : MonoBehaviour
         {
             
             objectDelay = Random.Range(collectableRandMin, collectableRandMax);
-            // DelayObjectPlacement();
+            DelayObjectPlacement();
 
             // Debug.Log("is a collectable");
 
@@ -74,14 +74,14 @@ public class ObjectActivator : MonoBehaviour
         }
     }
 
-    //IEnumerator DelayObjectPlacement()
-    //{
-    //    Debug.Log("delay called");
-    //    // print(Time.time);
-    //    yield return new WaitForSeconds(5.0f);
-    //    // print(Time.time);
+    IEnumerator DelayObjectPlacement()
+    {
+        Debug.Log("delay called");
+        // print(Time.time);
+        yield return new WaitForSeconds(5.0f);
+        // print(Time.time);
                 
-    //}
+    }
 
 
 }

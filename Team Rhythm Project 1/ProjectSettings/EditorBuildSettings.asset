@@ -11,10 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DanceElevator-Prototype.unity
     guid: ce63fd832dcbf6b418be242792c636bb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MovementPrototyping.unity
     guid: 1acea8294caf5b4448c59fdfae0c9c79
-  - enabled: 1
-    path: Assets/Scenes/Alpha.unity
-    guid: 05c3c41af8e0e6945b36d908064ae0e7
   m_configObjects: {}

@@ -7,12 +7,11 @@ public class PlayCollisionSound : MonoBehaviour
 {
     [SerializeField]
     AudioSource[] soundEffects; // reference to the audio sources that are attached to the audio manager
-    
-    
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        //ontrigger checks if the object is the player
-        if (other.gameObject.tag == "Player")
+        //checks if the collision is coming from the player, might want to swap this to an OnTriggerEnter.
+        if (collision.collider.tag == "Player")
         {
             int soundToPlay = RandomiseSoundEffect();
             soundEffects[soundToPlay].PlayOneShot(soundEffects[soundToPlay].clip); // plays the sound once on collsion

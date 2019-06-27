@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3687257521840558194}
   - component: {fileID: 7059885230643181664}
   - component: {fileID: 3751789202342607164}
-  - component: {fileID: 7811837699598786284}
   m_Layer: 0
   m_Name: CollectablePrefab_1
   m_TagString: Collectable
@@ -118,21 +117,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162229178503756653}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7811837699598786284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6162229178503756653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc02a4a8c5090d946a9b05989466c407, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectableAudioEffects: {fileID: 0}
