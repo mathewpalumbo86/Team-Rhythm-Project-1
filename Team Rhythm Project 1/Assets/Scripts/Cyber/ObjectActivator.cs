@@ -13,7 +13,17 @@ public class ObjectActivator : MonoBehaviour
     private float objectDelay; // For setting a delay between object placements
     public Transform objectSpawnPosition; // Reference to the object spawn position.
     public float collectableRandMin;
-    public float collectableRandMax; 
+    public float collectableRandMax;
+
+    // Collectable spawn position x and y axis is randomised
+    public float spawnPosX;
+    public float spawnRangeXMin = 2;
+    public float spawnRangeXMax = 30;
+
+    public float spawnPosY;
+    public float spawnRangeYMin = 2;
+    public float spawnRangeYMax = 6;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,21 +49,24 @@ public class ObjectActivator : MonoBehaviour
                 // Debug.Log("spawn offset = " + spawnOffset);
             }
         }
-        else if (other.tag == "Collectable")
+
+        if (other.tag == "Collectable")
         {
             
             objectDelay = Random.Range(collectableRandMin, collectableRandMax);
             DelayObjectPlacement();
 
-            Debug.Log("is a collectable");
+            // Debug.Log("is a collectable");
 
-            // Debug.Log("tag is true");
-            
+            // Randomise spawn position
+            spawnPosX = Random.Range(spawnRangeXMin, spawnRangeXMax);
+            spawnPosY = Random.Range(spawnRangeYMin, spawnRangeYMax);
+
             GameObject objectToActivate = ObjectPooler.SharedInstance.GetPooledObject("Collectable");
             if (objectToActivate != null)
             {
-                // Sets the position of each object, allowing for the position offset
-                objectToActivate.transform.position = new Vector3(objectSpawnPosition.transform.position.x, objectSpawnPosition.transform.position.y, (objectSpawnPosition.transform.position.z));
+                // Sets the position of each object
+                objectToActivate.transform.position = new Vector3(spawnPosX, spawnPosY, (objectSpawnPosition.transform.position.z));
                 objectToActivate.transform.rotation = objectSpawnPosition.transform.rotation;
                 objectToActivate.SetActive(true);
                 // Debug.Log("spawn offset = " + spawnOffset);
