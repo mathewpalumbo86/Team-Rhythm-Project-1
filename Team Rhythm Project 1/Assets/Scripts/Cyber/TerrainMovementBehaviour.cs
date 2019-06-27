@@ -28,7 +28,6 @@ public class TerrainMovementBehaviour : MonoBehaviour
         // Move this instance of terrain.
         transform.Translate(Vector3.back * Time.deltaTime * terrainMovementSpeed);
     }
-
     
 
 }
