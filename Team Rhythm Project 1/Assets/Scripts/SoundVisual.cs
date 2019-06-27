@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundVisual : MonoBehaviour
 {
     // sample size of 1024 is constant (in this case)
-    private const int SAMPLE_SIZE = 1024;
+    public const int SAMPLE_SIZE = 1024;
 
     // these are checked every frame
     // average power output of the sound
@@ -15,28 +15,30 @@ public class SoundVisual : MonoBehaviour
     // pitch per frame
     public float pitchValue;
 
-    //
+    // multiplies how big the cubes are scaled with the music
     public float visualModifier = 50.0f;
-    // 
+    // how quickly the cubes return their scale to the original size after a pulse
     public float smoothSpeed = 10.0f;
 
     //====================================================
     // audio being played
     private AudioSource source;
 
-    // samples and spectrum arrays and sampleRate from file
-    private float[] samples;
-    private float[] spectrum;
-    private float sampleRate;
+    // samples and spectrum arrays and the sampleRate from file
+    public float[] samples;
+    public float[] spectrum;
+    public float sampleRate;
 
 
     // Visual stuff =====================================
-    // array of objects spawned
-    private Transform[] visualList;
-    // how far apart they will be (based on scale)
-    private float[] visualScale;
+    // list of objects spawned
+    public Transform[] visualList;
+
+    
+    // the height scale of each cube based on the audio
+    public float[] visualScale;
     // number of cubes
-    private int amnVisual = 64;
+    public int amountOfVisuals;
 
 
     // Start is called before the first frame update
@@ -53,27 +55,30 @@ public class SoundVisual : MonoBehaviour
         sampleRate = AudioSettings.outputSampleRate;
 
         // Visualise
-        SpawnLine();
+        // SpawnLine();
     }
 
-    // spawn objects
-    private void SpawnLine()
-    {
-        //
-        visualScale = new float[amnVisual];
-        visualList = new Transform[amnVisual];
+    //// spawn objects THIS NEEDS TO BE MOVED ELSEWHERE
+    //private void SpawnLine()
+    //{
+    //    // These are the scale values which are updated based on the audio spectrum data
+    //    visualScale = new float[amountOfVisuals];
 
-        for (int i = 0; i < amnVisual; i++)
-        {
-            // spawns primitives, in this case cubes (different to instantiate?)
-            GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
+    //    visualList = new Transform[amountOfVisuals];
+        
 
-
-            visualList[i] = go.transform;
-            visualList[i].position = Vector3.right * i;
-        }
-          
-    }
+    //    for (int i = 0; i < amountOfVisuals; i++)
+    //    {
+    //        // spawns primitives, in this case cubes 
+    //        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube) as GameObject;
+            
+    //        // adds it to the list
+    //        visualList[i] = go.transform;
+    //        // gives it a position
+    //        visualList[i].position = Vector3.back * i;           
+    //    }
+        
+    //}
 
 
     // Update is called once per frame
@@ -82,36 +87,46 @@ public class SoundVisual : MonoBehaviour
         // analyse sound every frame
         AnalyzeSound();
         // update visuals every frame
-        UpdateVisual();
+        // UpdateVisual();
     }
 
-    //
-    private void UpdateVisual()
-    {
-        int visualIndex = 0;
-        int spectrumIndex = 0;
-        int averageSize = SAMPLE_SIZE / amnVisual;
+    
+    //private void UpdateVisual()
+    //{
 
-        while (visualIndex < amnVisual)
-        {
-            int j = 0;
-            float sum = 0;
-            while (j < averageSize)
-            {
-                sum += spectrum[spectrumIndex];
-                spectrumIndex++;
-                j++;
-            }
+    //    int visualIndex = 0;
+    //    // which frequency
+    //    int spectrumIndex = 0;
+    //    // splits all the samples up into bins based on how many visuals there are
+    //    int averageSize = SAMPLE_SIZE / amountOfVisuals;
 
-            float scaleY = sum / averageSize * visualModifier;
-            visualScale[visualIndex] -= Time.deltaTime * smoothSpeed;
-            if (visualScale[visualIndex] < scaleY)
-                visualScale[visualIndex] = scaleY;
+    //    while (visualIndex < amountOfVisuals)
+    //    {
+    //        int j = 0;
+    //        float sum = 0;
+    //        while (j < averageSize)
+    //        {
+    //            sum += spectrum[spectrumIndex];
+    //            spectrumIndex++;
+    //            j++;
+    //        }
 
-            visualList[visualIndex].localScale = Vector3.one + Vector3.up * visualScale[visualIndex];
-            visualIndex++;
-        }
-    }
+    //        // 
+    //        float scaleY = sum / averageSize * visualModifier;
+
+    //        visualScale[visualIndex] -= Time.deltaTime * smoothSpeed;
+
+    //        if (visualScale[visualIndex] < scaleY)
+    //            visualScale[visualIndex] = scaleY;
+
+    //        // modifies the scale of each object
+    //        visualList[visualIndex].localScale = Vector3.one + Vector3.up * visualScale[visualIndex];
+    //        visualIndex++;
+
+
+
+    //    }
+    //}
 
 
     // 
@@ -135,7 +150,7 @@ public class SoundVisual : MonoBehaviour
         dbValue = 20 * Mathf.Log10(rmsValue / 0.1f);
 
         // 
-        // get the sound spectrum
+        // Get the spectrum data (requires the sample array, the channel the FFTWindow type being used to split up the frequencies up)
         source.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
         /* This isn't necessary in this script but gives an example of how to read the pitch. 
