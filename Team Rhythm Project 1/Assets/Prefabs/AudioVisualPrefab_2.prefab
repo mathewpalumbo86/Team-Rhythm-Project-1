@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8910524216490075504}
   - component: {fileID: 8910524216490075505}
   - component: {fileID: 8910524216490075506}
+  - component: {fileID: 7354008406710051472}
   m_Layer: 0
   m_Name: AudioVisualPrefab_2
   m_TagString: Untagged
@@ -91,3 +92,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7354008406710051472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8910524216490075507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3017798c959ed1d4a8c8baf1af25b1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -9,6 +9,7 @@ TagManager:
   - Terrain
   - Collectable
   - CollectableSpawner
+  - CollectableEffect_1
   layers:
   - Default
   - TransparentFX
