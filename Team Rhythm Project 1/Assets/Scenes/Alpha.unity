@@ -1149,6 +1149,12 @@ MonoBehaviour:
   objectSpawnPosition: {fileID: 1123178503}
   collectableRandMin: 10
   collectableRandMax: 20
+  spawnPosX: 0
+  spawnRangeXMin: 4
+  spawnRangeXMax: 28
+  spawnPosY: 0
+  spawnRangeYMin: 3
+  spawnRangeYMax: 8
 --- !u!65 &891041927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2497,7 +2503,7 @@ PrefabInstance:
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
@@ -2507,7 +2513,7 @@ PrefabInstance:
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 96
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
@@ -2651,17 +2657,17 @@ PrefabInstance:
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 300
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6642799594656483954, guid: d2901353f314b8e469d9cec434b45512,
         type: 3}
@@ -2703,6 +2709,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6642799594656483965, guid: d2901353f314b8e469d9cec434b45512,
+        type: 3}
+      propertyPath: collectableSpeed
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2901353f314b8e469d9cec434b45512, type: 3}
 --- !u!1001 &7004594269405747310
@@ -2720,7 +2731,7 @@ PrefabInstance:
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
@@ -2730,7 +2741,7 @@ PrefabInstance:
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 96
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 3691770678801280834, guid: e93aa93baed13274992f7b12fc080977,
         type: 3}
